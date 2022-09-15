@@ -1,13 +1,58 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
+import "../../styles/login.css";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
 
+	const [userData, setUserData] = useState(initialState)
+
+	let initialState = {
+		email: "",
+		password: "",
+	}
+
+	let handleSubmit = async (event) => {
+		event.preventDefault()
+		if (actions.loginValidityChecker(userData)) {
+			await actions.userLogin(userData)
+		}
+	}
+
+	let handleChange = ({ target }) => {
+		setUserData({
+			...userData,
+			[target.name]: target.value,
+		})
+	};
+
 	return (
-		<div className="container text-center mt-5">
-			<h1>Login Page</h1>
-		</div>
+		<form className="formulario" onSubmit={handleSubmit}>
+			<h1>Inicia Seccion</h1>
+			<div className="container">
+				<div className="imput-contenedor mb-3 d-flex">
+					<i className="fa-solid fa-envelope icon"></i>
+					<input
+						placeholder="Email"
+						type="text"
+						name="email"
+						onChange={handleChange}
+						id="email"
+						aria-describedby="emailHelp"
+					/>
+				</div>
+				<div className="imput-contenedor mb-3 d-flex">
+					<i className="fa-solid fa-key icon"></i>
+					<input
+						placeholder="Password"
+						type="password"
+						name="password"
+						onChange={handleChange}
+						id="password"
+					/>
+				</div>
+				<button type="submit" className="button btn-primary my-2">Entrar</button>
+			</div>
+		</form>
 	);
 };
