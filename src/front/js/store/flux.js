@@ -21,32 +21,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				}
 			},
-			userRegister: async () => {
-				let store = getStore();
-				try {
-					let response = await fetch(`http://172.16.0.7:3001/api/private`, {
-						method: 'GET',
-						headers: {
-							"Content-Type": "application/json",
-							Authorization: `Bearer ${store.token}`,
-						},
-						body: JSON.stringify(),
-					})
-					if (response.ok) {
-						let data = await response.json();
-						setStore({ users: data });
-						return true
-					} else {
-						return false
-					}
-				} catch (error) {
-					console.log(`Error: ${error}`)
-				}
-			},
-
-			test: () => {
-				console.log("Hello")
-			},
 
 			userSignup: async (user) => {
 				try {
