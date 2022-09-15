@@ -39,6 +39,7 @@ export const Login = () => {
 						onChange={handleChange}
 						id="email"
 						aria-describedby="emailHelp"
+						className="form-control"
 					/>
 				</div>
 				<div className="imput-contenedor mb-3 d-flex">
@@ -49,6 +50,7 @@ export const Login = () => {
 						name="password"
 						onChange={handleChange}
 						id="password"
+						className="form-control"
 					/>
 				</div>
 				<button type="submit" className="button btn-primary my-2">Entrar</button>
