@@ -5,3 +5,37 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+.buscador {
+  width: 30rem;
+}
+
+.profile-photo {
+  width: 3rem;
+  height: 3rem;
+}
+
+.card {
+  margin: 40px auto;
+  width: 600px;
+}
+.card-header {
+  padding: 0.75rem 15px;
+}
+.titulo {
+  display: inline-block;
+}
+.btn-link {
+  float: right;
+  color: gray;
+  padding-right: 0px;
+}
+.card-body {
+  padding: 15px;
+}
+.comentario {
+  color: #cdcccc;
+  display: inline-block;
+  width: 88%;
+}
+

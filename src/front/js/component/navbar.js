@@ -7,8 +7,14 @@ export const Navbar = () => {
 			<div className="container">
 				<div className="d-flex w-auto">
 					<Link to="/">
-						<span className="navbar-brand mb-0 h1">Home</span>
+						<span className="navbar-brand mb-0 h1">Young Star</span>
 					</Link>
+				</div>
+
+				<div className="d-flex">
+					<input className="buscador form-control me-2" type="search" placeholder=" Buscador" aria-label="Search">
+					</input>
+					<button className="btn btn-primary mx-1"><i className="fas fa-search me-2 pt-2"></i></button>
 				</div>
 				<div className="d-flex flex-row-reverse">
 					<Link to="/signup">
