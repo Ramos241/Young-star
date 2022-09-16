@@ -75,7 +75,7 @@ export const Signup = () => {
 					</div>
 					<button type="submit" className="button btn-primary my-2">Registrar</button>
 					<p className="politicas">
-						Al registrarte, aceptas nuestras Politica de Privacidad y Condiciones de uso.
+						Al registrarte, aceptas nuestras Politicas de privacidad y Condiciones de uso.
 					</p>
 				</div>
 			</form>
