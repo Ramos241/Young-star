@@ -42,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(`Error: ${error}`)
 				}
 			},
-=======
+
 			signupValidityChecker: (user) => {
 				if (user.email == undefined || user.username == undefined || user.password == undefined) {
 					return false
