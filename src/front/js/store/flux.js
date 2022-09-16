@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			userSignup: async (user) => {
 				try {
-					let response = await fetch(`http://172.16.0.7:3001/api/signup`, {
+					let response = await fetch(`http://127.0.0.1:3001/api/signup`, {
 						method: 'POST',
 						headers: {
 							"Content-Type": "application/json",
