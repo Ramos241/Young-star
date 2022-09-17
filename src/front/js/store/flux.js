@@ -5,8 +5,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			users: []
 		},
 		actions: {
-
-
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -23,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			userLogin: async (user) => {
 				try {
-					let response = await fetch(`http://172.16.0.7:3001/api/login`, {
+					let response = await fetch(`http://172.0.0.1:3001/api/login`, {
 						method: 'POST',
 						headers: {
 							"Content-Type": "application/json",
@@ -55,6 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return true
 					}
 					else {
+						alert("Error:Hay campos no validos")
 						return false
 					}
 				}
