@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/login.css";
+import { Navbar } from "../component/navbar";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -27,8 +28,10 @@ export const Login = () => {
 	};
 
 	return (
+		
+	<><Navbar />
 		<form className="formulario" onSubmit={handleSubmit}>
-			<h1>Inicia Seccion</h1>
+			<h1>Iniciar Seccion</h1>
 			<div className="container">
 				<div className="imput-contenedor mb-3 d-flex">
 					<i className="fa-solid fa-envelope icon"></i>
@@ -56,5 +59,6 @@ export const Login = () => {
 				<button type="submit" className="button btn-primary my-2">Entrar</button>
 			</div>
 		</form>
+	</>
 	);
 };
