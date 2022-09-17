@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
+import { Navbar } from "../component/navbar";
 
 
 export const Signup = () => {
@@ -30,6 +31,7 @@ export const Signup = () => {
 	};
 
 	return (
+		<><Navbar />
 		<div className="img-fondo">
 			<form className="formulario" onSubmit={handleSubmit}>
 				<h1>Registrate</h1>
@@ -80,6 +82,7 @@ export const Signup = () => {
 				</div>
 			</form>
 		</div>
+		</>
 	);
 };
 
