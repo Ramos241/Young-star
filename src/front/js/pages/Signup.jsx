@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
+import { useNavigate } from "react-router-dom";
 
 
 export const Signup = () => {
 	const { actions } = useContext(Context);
+	const navigate = useNavigate()
 
 	const [userData, setUserData] = useState(initialState)
 	let initialState = {
@@ -17,8 +19,10 @@ export const Signup = () => {
 		event.preventDefault()
 		if (actions.signupValidityChecker(userData)) {
 			await actions.userSignup(userData)
+			navigate("/login")
+
 		} else {
-			alert("Invalid Parameters")
+			alert("CAMPOS INVALIDOS")
 		}
 	}
 
