@@ -17,7 +17,6 @@ export const Navbar = () => {
 					<Link to="/login">
 						<button className="btn btn-primary mx-1">Login</button>
 					</Link>
-
 					{/* <button className="btn btn-secondary mx-1">Logout</button> */}
 				</div>
 			</div>
