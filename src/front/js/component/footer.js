@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-	<footer className="container">
-		<p className="float-right"></p>
-		<p>&copy; {(new Date().getFullYear())} Yount-star, Inc. &middot; <a href="#">Política de Privacidad</a> &middot; <a href="#">Comdiciones de uso</a></p>
+	<footer className="footer">
+	<div className="container-fluid">
+            <div className="row">
+			<p style={{textAlign: "center",marginTop: "10px", color: "white"}}>&copy; {(new Date().getFullYear())} Young-star, Inc. &middot; <a href="#">Política de Privacidad</a> &middot; <a href="#">Condiciones de uso</a></p>
+        </div>
+        </div>
 	</footer>
 );

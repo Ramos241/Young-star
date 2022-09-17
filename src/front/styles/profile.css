@@ -1,0 +1,8 @@
+.navbar-profile {
+    display: inline-block;
+    float: none;
+    text-align: center;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
