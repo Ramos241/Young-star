@@ -6,12 +6,13 @@
     on that page only (the ones not reused in other pages).
 */
 body {
-  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
 
 
 .footer { position:relative; height: 30px; bottom: 0; width: 100%;
-
 }
 
 .buscador {
