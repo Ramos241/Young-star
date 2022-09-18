@@ -1,22 +1,21 @@
 import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom"
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
 
-import { useNavigate } from "react-router-dom";
-
-import { Navbar } from "../component/navbar";
-
-
-
 export const Signup = () => {
-	const { actions } = useContext(Context);
-	const navigate = useNavigate()
+	let navigate = useNavigate()
+	const { store, actions } = useContext(Context);
 
-	const [userData, setUserData] = useState(initialState)
-	let initialState = {
-		email: "",
-		username: "",
-		password: "",
+	const [userData, setUserData] = useState({
+		username: "", email: "", password: ""
+	});
+
+	const handleChange = (event) => {
+		setUserData({
+			...userData,
+			[event.target.name]: event.target.value
+		})
 	}
 
 	let handleSubmit = async (event) => {
@@ -30,53 +29,44 @@ export const Signup = () => {
 		}
 	}
 
-	let handleChange = ({ target }) => {
-		setUserData({
-			...userData,
-			[target.name]: target.value,
-		})
-	};
-
 	return (
-		<><Navbar />
 		<div className="img-fondo">
-			<form className="formulario" onSubmit={handleSubmit}>
+			<form className="formulario" onSubmit={handleSubmit} action="login.php">
 				<h1>Registrate</h1>
 				<div className="container">
 					<div className="imput-contenedor mb-3 d-flex">
 						<i className="fa-solid fa-envelope icon"></i>
 						<input
+							className="form-control"
 							placeholder="Email"
 							type="text"
 							name="email"
+							value={userData.email}
 							onChange={handleChange}
-							className="form-control"
-							id="email"
-							aria-describedby="emailHelp"
 						/>
 					</div>
 
 					<div className="imput-contenedor mb-3 d-flex">
 						<i className="fa-solid fa-user icon"></i>
 						<input
-							placeholder="Nombre"
+							className="form-control"
+							placeholder="Nombre de usuario"
 							type="text"
 							name="username"
+							value={userData.username}
 							onChange={handleChange}
-							className="form-control"
-							id="username"
 						/>
 					</div>
 
 					<div className="imput-contenedor mb-3 d-flex">
 						<i className="fa-solid fa-key icon"></i>
 						<input
-							placeholder="Password"
+							className="form-control"
+							placeholder="Contraseña"
 							type="password"
 							name="password"
+							value={userData.password}
 							onChange={handleChange}
-							className="form-control"
-							id="password"
 						/>
 					</div>
 					<div className="Titulo mt-3">
@@ -89,7 +79,6 @@ export const Signup = () => {
 				</div>
 			</form>
 		</div>
-		</>
 	);
 };
 

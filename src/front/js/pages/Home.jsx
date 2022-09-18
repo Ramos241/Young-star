@@ -7,7 +7,6 @@ export const Home = () => {
     const { store, actions } = useContext(Context);
     return (
         <>
-            <Navbar />
             {/* Video 1 */}
             <div className="card">
                 <div className="card-header">

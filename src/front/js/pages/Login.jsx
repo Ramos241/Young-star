@@ -1,31 +1,19 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/login.css";
 
 import { useNavigate } from "react-router-dom";
-
-import { Navbar } from "../component/navbar";
-
+import "../../styles/login.css";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
 	const navigate = useNavigate()
-
-	const [userData, setUserData] = useState(initialState)
 
 	let initialState = {
 		email: "",
 		password: "",
 	}
 
-	let handleSubmit = async (event) => {
-		event.preventDefault()
-		if (actions.loginValidityChecker(userData)) {
-			if (await actions.userLogin(userData)) {
-				navigate("/")
-			}
-		}
-	}
+	let [userData, setUserData] = useState(initialState)
 
 	let handleChange = ({ target }) => {
 		setUserData({
@@ -34,38 +22,45 @@ export const Login = () => {
 		})
 	};
 
+	let handleSubmit = async (event) => {
+		event.preventDefault()
+		if (actions.loginValidityChecker(userData)) {
+			if (await actions.loginUser(userData)) {
+				navigate("/profile")
+			}
+		}
+	}
+
 	return (
-		
-	<><Navbar />
-		<form className="formulario" onSubmit={handleSubmit}>
-			<h1>Iniciar Seccion</h1>
-			<div className="container">
-				<div className="imput-contenedor mb-3 d-flex">
-					<i className="fa-solid fa-envelope icon"></i>
-					<input
-						placeholder="Email"
-						type="text"
-						name="email"
-						onChange={handleChange}
-						id="email"
-						aria-describedby="emailHelp"
-						className="form-control"
-					/>
+
+		<>
+			<form className="formulario" onSubmit={handleSubmit}>
+				<h1>Iniciar Seccion</h1>
+				<div className="container">
+					<div className="imput-contenedor mb-3 d-flex">
+						<i className="fa-solid fa-envelope icon"></i>
+						<input
+							type="email"
+							name="email"
+							onChange={handleChange}
+							className="form-control input-fitter"
+							id="exampleInputEmail1"
+							aria-describedby="emailHelp"
+						/>
+					</div>
+					<div className="imput-contenedor mb-3 d-flex">
+						<i className="fa-solid fa-key icon"></i>
+						<input
+							type="password"
+							name="password"
+							onChange={handleChange}
+							className="form-control"
+							id="exampleInputPassword1"
+						/>
+					</div>
+					<button type="submit" className="button btn-primary my-2">Entrar</button>
 				</div>
-				<div className="imput-contenedor mb-3 d-flex">
-					<i className="fa-solid fa-key icon"></i>
-					<input
-						placeholder="Password"
-						type="password"
-						name="password"
-						onChange={handleChange}
-						id="password"
-						className="form-control"
-					/>
-				</div>
-				<button type="submit" className="button btn-primary my-2">Entrar</button>
-			</div>
-		</form>
-	</>
+			</form>
+		</>
 	);
 };

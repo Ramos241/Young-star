@@ -32,9 +32,9 @@ export const Navbar = () => {
             <button className="btn btn-primary mx-1">Logout</button>
           </Link>
 
-          <Link to="/Profile">
+          {/* <Link to="/Profile">
             <button className="btn btn-primary mx-1">Perfil</button>
-          </Link>
+          </Link> */}
           {/* <button className="btn btn-secondary mx-1">Logout</button> */}
         </div>
       </div>

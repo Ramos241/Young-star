@@ -5,7 +5,6 @@ import { Navbar } from "../component/navbar_profile";
 export const Profile = () => {
     return (
         <>
-            <Navbar />
             <nav class="navbar navbar-expand-lg navbar-profile">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

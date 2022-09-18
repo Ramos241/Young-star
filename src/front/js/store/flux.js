@@ -2,7 +2,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: localStorage.getItem("token") || "",
-			users: []
+			user_id: 0,
+			username: "",
+			email: "",
+			// role: "",
+			// services: [],
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -14,15 +19,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (user.email.trim() != "" && user.password.trim() != "") {
 					return true
 				}
-				else {
-					return false
-				}
 			},
 
-			userLogin: async (user) => {
+
+			loginUser: async (user) => {
 				try {
-					let response = await fetch(`http://172.0.0.1:3001/api/login`, {
-						method: 'POST',
+					let response = await fetch(`http://localhost:3001/api/login`, {
+						method: "POST",
 						headers: {
 							"Content-Type": "application/json",
 						},
@@ -30,7 +33,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					if (response.ok) {
 						let data = await response.json()
-						setStore({ token: data.token })
+						setStore({
+							token: data.token,
+							user_id: data.user_id,
+						})
 						localStorage.setItem("token", data.token)
 						return true
 					} else {
@@ -41,41 +47,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			signupValidityChecker: (user) => {
-				if (user.email == undefined || user.username == undefined || user.password == undefined) {
-					return false
-				} else {
-					if (user.email.trim() != "" &&
-						(user.email.includes("@gmail.com") || user.email.includes("@outlook.com") || user.email.includes("@hotmail.com")) &&
-						user.username.trim() != "" &&
-						user.password.trim() != "" &&
-						user.password.length >= 8) {
-						return true
-					}
-					else {
-						alert("Error:Hay campos no validos")
-						return false
-					}
-				}
-			},
+
 
 			userSignup: async (user) => {
 				try {
-					let response = await fetch(`http://127.0.0.1:3001/api/signup`, {
-						method: 'POST',
+					let response = await fetch(`http://localhost:3001/api/signup`, {
+						method: "POST",
 						headers: {
-							"Content-Type": "application/json",
+							"Content-Type": "application/json"
 						},
 						body: JSON.stringify(user),
-					})
+					});
 					if (response.ok) {
-						return true
-					} else {
-						return false
+						return true;
 					}
 				} catch (error) {
-					console.log(`Error: ${error}`)
+					console.log(`Error: ${error}`);
 				}
+			},
+
+			signupValidityChecker: (user) => {
+				if (user.email.trim() !== "" &&
+					user.username.trim() !== "" &&
+					user.password.trim() !== "" &&
+					(user.email.includes("@gmail.com") || user.email.includes("@outlook.com") || user.email.includes("@hotmail.com")) &&
+					user.password.length >= 8) {
+					return true;
+				}
+				else {
+					alert("Error: Datos no válidos");
+					return false;
+				}
+			},
+
+			userLogout: () => {
+				localStorage.removeItem("token"),
+					setStore({ token: "" })
+				alert("Succesfully logged out")
 			},
 
 

@@ -7,8 +7,10 @@ import { Signup } from "./pages/Signup.jsx";
 import { Login } from "./pages/Login.jsx";
 import { Profile } from "./pages/Profile.jsx";
 import injectContext from "./store/appContext";
+// import { Navbar } from "./component/navbar";
 
 import { Footer } from "./component/footer";
+import { Navbar } from "./component/navbar_home";
 
 //create your first component
 const Layout = () => {
@@ -20,6 +22,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+          <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Signup />} path="/signup" />
