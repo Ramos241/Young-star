@@ -1,10 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/login.css";
+
+import { useNavigate } from "react-router-dom";
+
 import { Navbar } from "../component/navbar";
+
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
+	const navigate = useNavigate()
 
 	const [userData, setUserData] = useState(initialState)
 
@@ -16,7 +21,9 @@ export const Login = () => {
 	let handleSubmit = async (event) => {
 		event.preventDefault()
 		if (actions.loginValidityChecker(userData)) {
-			await actions.userLogin(userData)
+			if (await actions.userLogin(userData)) {
+				navigate("/")
+			}
 		}
 	}
 

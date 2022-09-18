@@ -1,9 +1,7 @@
 {
     "_meta": {
         "hash": {
-
-            "sha256": "94657f40f3916518656201d56c44f8e664a49641f51ccea8768acfd0964567e7"
-
+            "sha256": "16cfc3eed12f8eacef0ead08642ef920d7e11ffdb6a474901e689390e82679f6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -28,13 +26,11 @@
         },
         "certifi": {
             "hashes": [
-
                 "sha256:36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5",
                 "sha256:e232343de1ab72c2aa521b625c80f699e356830fd0e2c620b465b304b17b0516"
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2022.9.14"
-
         },
         "click": {
             "hashes": [
@@ -50,7 +46,6 @@
             ],
             "index": "pypi",
             "version": "==1.29.0"
-
         },
         "colorama": {
             "hashes": [
@@ -59,7 +54,6 @@
             ],
             "markers": "platform_system == 'Windows'",
             "version": "==0.4.5"
-
         },
         "flask": {
             "hashes": [
@@ -315,7 +309,6 @@
             ],
             "index": "pypi",
             "version": "==2.9.3"
-
         },
         "pyjwt": {
             "hashes": [
@@ -324,7 +317,6 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2.4.0"
-
         },
         "python-dotenv": {
             "hashes": [

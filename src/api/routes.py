@@ -72,3 +72,29 @@ def add_user():
                 print(error.args)                
                 db.session.rollback()                
                 return jsonify({"message": f"Error {error.args}"}), 500
+
+@api.route("/login", methods=['POST'])
+def login_user():
+    if request.method == 'POST':
+        body = request.json
+
+        email = body.get("email")
+        password = body.get("password")
+
+        if email is None:
+            return jsonify({"message":"Error, bad request"}), 400
+        elif password is None:
+            return jsonify({"message":"Error, bad request"}), 400
+        else:
+            login_user = User.query.filter_by(email=email).one_or_none()
+            if login_user is None:
+                return jsonify({"message":"Error, couldn't find user"}), 404
+            else:
+                if check_password(hash_password=login_user.password, password=password, salt=login_user.salt):
+                    # Creamos el token
+                    new_token = create_access_token(identity=login_user.id)
+                    return jsonify({"token":new_token})
+                else:
+                    return jsonify({"message":"Bad credentials"}), 400
+
+    return jsonify({"message":"Sucess!"}), 201
