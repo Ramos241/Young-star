@@ -1,7 +1,51 @@
 /*
     home.css: This website contains selectors only used in home.css
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
+    All pages share the styles on index.css but you should create
+    one more css for each page that will contain the selected used
     on that page only (the ones not reused in other pages).
 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+
+.footer { position:relative; height: 30px; bottom: 0; width: 100%;
+}
+
+.buscador {
+  width: 30rem;
+}
+
+.logo {
+  width: 12rem;
+  height: 4rem;
+}
+
+.profile-photo {
+  width: 3rem;
+  height: 3rem;
+}
+
+.card {
+  margin: 40px auto;
+  width: 600px;
+}
+.card-header {
+  padding: 0.75rem 15px;
+}
+.titulo {
+  display: inline-block;
+}
+.btn-link {
+  float: right;
+  color: gray;
+  padding-right: 0px;
+}
+.card-body {
+  padding: 15px;
+}
+
+

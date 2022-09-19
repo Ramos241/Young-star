@@ -1,19 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			token: localStorage.getItem("token") || "",
+			users: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -21,32 +10,75 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 
-			getMessage: async () => {
-				try{
-					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const data = await resp.json()
-					setStore({ message: data.message })
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
+			loginValidityChecker: (user) => {
+				if (user.email.trim() != "" && user.password.trim() != "") {
+					return true
+				}
+				else {
+					return false
 				}
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+			userLogin: async (user) => {
+				try {
+					let response = await fetch(`http://172.0.0.1:3001/api/login`, {
+						method: 'POST',
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(user),
+					})
+					if (response.ok) {
+						let data = await response.json()
+						setStore({ token: data.token })
+						localStorage.setItem("token", data.token)
+						return true
+					} else {
+						return false
+					}
+				} catch (error) {
+					console.log(`Error: ${error}`)
+				}
+			},
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
+			signupValidityChecker: (user) => {
+				if (user.email == undefined || user.username == undefined || user.password == undefined) {
+					return false
+				} else {
+					if (user.email.trim() != "" &&
+						(user.email.includes("@gmail.com") || user.email.includes("@outlook.com") || user.email.includes("@hotmail.com")) &&
+						user.username.trim() != "" &&
+						user.password.trim() != "" &&
+						user.password.length >= 8) {
+						return true
+					}
+					else {
+						alert("Error:Hay campos no validos")
+						return false
+					}
+				}
+			},
+
+			userSignup: async (user) => {
+				try {
+					let response = await fetch(`http://127.0.0.1:3001/api/signup`, {
+						method: 'POST',
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(user),
+					})
+					if (response.ok) {
+						return true
+					} else {
+						return false
+					}
+				} catch (error) {
+					console.log(`Error: ${error}`)
+				}
+			},
+
+
 		}
 	};
 };
