@@ -38,18 +38,6 @@ export const Home = () => {
                     <button type="button" className="btn btn-light btn-sm">
                         <i className="far fa-heart"></i>
                     </button>
-                    <input
-                        type="text"
-                        className="form-control comentario"
-                        id="recipient-name"
-                        value="Escriba un comentario..."
-                    ></input>
-                    <button
-                        type="button"
-                        id="like"
-                        className="btn btn-light btn-sm">
-                        <i className="far fa-laugh-wink"></i>
-                    </button>
                 </div>
             </div>
             {/* Video 2 */}
@@ -77,15 +65,6 @@ export const Home = () => {
                     <p className="card-text">Descripcion*</p>
                     <button type="button" className="btn btn-light btn-sm">
                         <i className="far fa-heart"></i>
-                    </button>
-                    <input
-                        type="text"
-                        className="form-control comentario"
-                        id="recipient-name"
-                        value="Escriba un comentario..."
-                    ></input>
-                    <button type="button" className="btn btn-light btn-sm">
-                        <i className="far fa-laugh-wink"></i>
                     </button>
                 </div>
             </div>
@@ -115,15 +94,6 @@ export const Home = () => {
                     <button type="button" className="btn btn-light btn-sm">
                         <i className="far fa-heart"></i>
                     </button>
-                    <input
-                        type="text"
-                        className="form-control comentario"
-                        id="recipient-name"
-                        value="Escriba un comentario..."
-                    ></input>
-                    <button type="button" className="btn btn-light btn-sm">
-                        <i className="far fa-laugh-wink"></i>
-                    </button>
                 </div>
             </div>
             {/* Video 4 */}
@@ -152,15 +122,6 @@ export const Home = () => {
                     <button type="button" className="btn btn-light btn-sm">
                         <i className="far fa-heart"></i>
                     </button>
-                    <input
-                        type="text"
-                        className="form-control comentario"
-                        id="recipient-name"
-                        value="Escriba un comentario..."
-                    ></input>
-                    <button type="button" className="btn btn-light btn-sm">
-                        <i className="far fa-laugh-wink"></i>
-                    </button>
                 </div>
             </div>
             {/* Video 5 */}
@@ -188,15 +149,6 @@ export const Home = () => {
                     <p className="card-text">Descripcion*</p>
                     <button type="button" className="btn btn-light btn-sm">
                         <i className="far fa-heart"></i>
-                    </button>
-                    <input
-                        type="text"
-                        className="form-control comentario"
-                        id="recipient-name"
-                        value="Escriba un comentario..."
-                    ></input>
-                    <button type="button" className="btn btn-light btn-sm">
-                        <i className="far fa-laugh-wink"></i>
                     </button>
                 </div>
             </div>

@@ -19,7 +19,7 @@ export const Navbar = () => {
           <input
             className="buscador form-control me-2"
             type="search"
-            placeholder=" Buscador"
+            placeholder=" Search"
             aria-label="Search"
           ></input>
           <button className="btn btn-primary mx-1">

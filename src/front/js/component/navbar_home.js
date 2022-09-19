@@ -12,7 +12,7 @@ export const Navbar = () => {
 				</div>
 
 				<div className="d-flex">
-					<input className="buscador form-control me-2" type="search" placeholder=" Buscador" aria-label="Search">
+					<input className="buscador form-control me-2" type="search" placeholder=" Search" aria-label="Search">
 					</input>
 					<button className="btn btn-primary mx-1"><i className="fas fa-search me-2 pt-2"></i></button>
 				</div>
