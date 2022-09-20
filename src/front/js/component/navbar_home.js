@@ -13,6 +13,7 @@ export const Navbar = () => {
 				</div>
 
 				<div className="d-flex">
+
 					<input
 						className="buscador form-control" type="search" placeholder=" Buscador" aria-label="Search">
 					</input>
