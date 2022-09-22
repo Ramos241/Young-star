@@ -11,8 +11,11 @@ body {
   background-color: black;
 }
 
-
-.footer { position:relative; height: 30px; bottom: 0; width: 100%;
+footer {
+  position: relative;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
 }
 
 .buscador {
@@ -48,4 +51,6 @@ body {
   padding: 15px;
 }
 
-
+/* * {
+  border: 1px solid red;
+} */
