@@ -1,8 +1,52 @@
-.navbar-profile {
-    display: inline-block;
-    float: none;
-    text-align: center;
-    background-color: black;
-    color: white;
-    align-items: center;
+.navbar-sections {
+  border-bottom: 1px solid rgb(79, 161, 255);
+  padding-left: 35%;
+}
+
+.photo-profile {
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  left: 10px;
+  bottom: 2rem;
+  position: relative;
+  border: 4px solid rgb(79, 161, 255);
+}
+
+.principal-video {
+  position: relative;
+  left: 29rem;
+  bottom: 26rem;
+  border: 3px solid rgb(79, 161, 255);
+}
+
+.followers {
+  color: white;
+  position: relative;
+  right: 10rem;
+  bottom: 63rem;
+}
+
+.second-video {
+  position: relative;
+  left: 68rem;
+  bottom: 51.4rem;
+  border: 3px solid rgb(79, 161, 255);
+}
+
+.third-video {
+  position: relative;
+  left: 49.25rem;
+  bottom: 37.6rem;
+  border: 3px solid rgb(79, 161, 255);
+}
+
+.ficha-perfil {
+  width: 400px;
+  height: 600px;
+  border: 2px solid rgb(79, 161, 255);
+  position: relative;
+  bottom: 1rem;
+  margin-left: 1rem;
+  border-radius: 20%;
 }
