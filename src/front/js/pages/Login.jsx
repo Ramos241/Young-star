@@ -34,7 +34,6 @@ export const Login = () => {
 	};
 
 	return (
-
 		<><Navbar />
 			<form className="formulario" onSubmit={handleSubmit}>
 				<h1>Iniciar Seccion</h1>
