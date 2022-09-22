@@ -15,18 +15,7 @@ from base64 import b64encode
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
-from flask_jwt_extended import JWTManager
-# import base64
-# import os 
-# from flask import Flask, request, jsonify, url_for, Blueprint 
-# from api.models import db, User 
-# from api.utils import generate_sitemap, APIException 
-# from werkzeug.security import generate_password_hash, check_password_hash 
-# from base64 import b64encode 
-# from flask_jwt_extended import create_access_token 
-# from flask_jwt_extended import get_jwt_identity 
-# from flask_jwt_extended import jwt_required 
-# from flask_jwt_extended import JWTManager 
+# from flask_jwt_extended import JWTManager
 
 api = Blueprint('api', __name__)
 
@@ -43,8 +32,7 @@ def check_password(hash_password, password, salt):
 def handle_users(user_id = None):    
     if request.method == 'GET':        
         if user_id is None:            
-            users = User.query.all()            
-            # Whats the idea with getting this?            
+            users = User.query.all()                       
             user_id = User.query.get(get_jwt_identity())            
             print(user_id.serialize())
             
