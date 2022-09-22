@@ -8,9 +8,9 @@
   height: 25rem;
   display: flex;
   left: 10px;
-  bottom: 6rem;
+  bottom: 2rem;
   position: relative;
-  border: 3px solid rgb(79, 161, 255);
+  border: 4px solid rgb(79, 161, 255);
 }
 
 .principal-video {
@@ -24,6 +24,7 @@
   color: white;
   position: relative;
   right: 10rem;
+  bottom: 63rem;
 }
 
 .second-video {
@@ -45,7 +46,7 @@
   height: 600px;
   border: 2px solid rgb(79, 161, 255);
   position: relative;
-  bottom: 42rem;
-  margin-left: 2rem;
+  bottom: 1rem;
+  margin-left: 1rem;
   border-radius: 20%;
 }
