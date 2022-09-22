@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/login.css";
-
+import GoogleLogin from 'react-google-login';
 import { useNavigate } from "react-router-dom";
-
 import { Navbar } from "../component/navbar";
 
 
@@ -22,7 +21,7 @@ export const Login = () => {
 		event.preventDefault()
 		if (actions.loginValidityChecker(userData)) {
 			if (await actions.userLogin(userData)) {
-				navigate("/")
+				navigate("/profile")
 			}
 		}
 	}
@@ -35,7 +34,6 @@ export const Login = () => {
 	};
 
 	return (
-
 		<>
 			<Navbar />
 			<form className="formulario" onSubmit={handleSubmit}>
