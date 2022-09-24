@@ -5,11 +5,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 			email: "",
 			password: "",
 			user: [],
+			backendUrl: process.env.BACKEND_URL,
+			products: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
+			},
+
+			userLogout: () => {
+				localStorage.removeItem("token"),
+					setStore({ token: "" })
+				alert("Succesfully logged out")
 			},
 
 			loginValidityChecker: (user) => {
@@ -22,7 +30,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			userLogin: async (user) => {
-				// let store = getStore()
 				try {
 					let response = await fetch(`http://127.0.0.1:3001/api/login`, {
 						method: "POST",
@@ -94,7 +101,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						method: "GET",
 						headers: {
 							"Content-Type": "application/json",
-							// "Authorization": `Bearer ${store.token}`
 						},
 					})
 					if (response.ok) {
@@ -112,7 +118,52 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			uploadImg: async (post) => {
+				const store = getStore();
+				try {
+					const response = await fetch(`${store.backendUrl}/post`, {
+						method: "POST",
+						mode: "no-cors",
+						body: post,
+					});
+					getActions().getPost();
+				} catch (error) {
+					console.log("getPost Error", error);
+				}
+			},
 
+			getPost: async () => {
+				const store = getStore();
+				try {
+					const response = await fetch(`${store.backendUrl}/post`);
+					const data = await response.json();
+					if (!response.ok) {
+						throw new Error("getPost error");
+					}
+					setStore({
+						...store,
+						post: data,
+					});
+				} catch (error) {
+					console.log("getPost Error", error);
+				}
+			},
+
+			deleteProduct: async (product_id) => {
+				const store = getStore();
+				try {
+					const response = await fetch(
+						`http://127.0.0.1:3001/api/${product_id}`,
+						{
+							method: "DELETE",
+						}
+					);
+					console.log(response);
+					getActions().getProducts();
+				} catch (error) {
+					console.log("deleteProduct error", error);
+				}
+			},
 		}
 	};
 };
