@@ -8,19 +8,6 @@ export const Home = () => {
     return (
         <>
             <Navbar />
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="" class="d-block w-100" alt="..." />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="..." />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="..." />
-                    </div>
-                </div>
-            </div>
             {/* Video 1 */}
             <div className="card">
                 <div className="card-header">
