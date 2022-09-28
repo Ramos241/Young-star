@@ -92,7 +92,6 @@
   bottom: 1rem;
   margin-left: 1rem;
   border-radius: 20%;
-}
 
 .card-profile {
   position: relative;
@@ -102,4 +101,5 @@
 .video {
   border: 3px solid rgb(79, 161, 255);
 }
+
 

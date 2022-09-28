@@ -1,7 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom"
+
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+  let navigate = useNavigate()
+
+  useEffect(() => { { actions.getUserInfo() } }, [])
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar_top">
       <div className="container container-fluid ">
@@ -14,8 +21,7 @@ export const Navbar = () => {
             />
           </Link>
         </div>
-
-        <div className="d-flex">
+        {/* <div className="d-flex">
           <input
             className="buscador form-control me-2"
             type="search"
@@ -25,11 +31,10 @@ export const Navbar = () => {
           <button className="btn btn-primary mx-1">
             <i className="fas fa-search me-2 pt-2"></i>
           </button>
-        </div>
-
+        </div> */}
         <div className="d-flex flex-row-reverse">
           <Link to="/">
-            <button className="btn btn-primary mx-1">Logout</button>
+            <button type="button" onClick={() => actions.userLogout()} className="btn btn-primary mx-1">Logout</button>
           </Link>
 
           <Link to="/Profile">

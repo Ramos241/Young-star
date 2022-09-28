@@ -10,6 +10,10 @@ export const Profile = () => {
             <Navbar />
             <Navbar_profile />
 
+            <Profile_card />
+
+
+
         </>
     );
 }

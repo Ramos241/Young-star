@@ -20,6 +20,7 @@ export const Navbar = () => {
 					<button className="btn btn-primary mx-1"><i className="fas fa-search me-2 pt-2"></i></button>
 				</div>
 
+
 				<div className="d-flex flex-row-reverse">
 					<Link to="/signup">
 						<button className="btn btn-primary mx-1">Signup</button>

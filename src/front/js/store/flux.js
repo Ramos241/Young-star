@@ -1,4 +1,5 @@
 const getState = ({ getStore, getActions, setStore }) => {
+
     return {
         store: {
             token: localStorage.getItem("token") || "",
@@ -95,7 +96,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             getUserInfo: async () => {
                 let store = getStore()
                 try {
-
                     let response = await fetch(`http://127.0.0.1:3001/api/users/single_user`, {
 
                         method: "GET",

@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 
 export const Profile_card = () => {
 
+
     const { store, actions } = useContext(Context);
     const [imageFile, setImageFile] = useState();
 
@@ -11,6 +12,7 @@ export const Profile_card = () => {
         formData.append("img", imageFile);
         actions.uploadImg(formData);
     };
+
     useEffect(() => {
         if (store.post && store.post.length > 0) return;
         actions.getPost();
@@ -19,6 +21,7 @@ export const Profile_card = () => {
     return (
         <>
         <div className="card-profile">
+
             <div className="justify-content-around my-3 mx-3">
                 {store.post && store.post.map((post) => (
                     <div className="d-flex flex-column justify-content-between" key={post.cloudinary_id}>
@@ -43,10 +46,10 @@ export const Profile_card = () => {
                         onChange={(e) => setImageFile(e.target.files[0])}
                         accept=".jpg, .jpeg, .png"
                     />             
-                   
                 </div>
             </div>
             <div className="ficha-perfil">
+
                 <h1><strong style={{ color: "white" }}>Jose Perez</strong></h1>
                 <p className="p-2" style={{ color: "white" }}>Joven pitcher de 19 años, Cararacas-Venezuela, Joven pitcher de 19 años, Cararacas-VenezuelaJoven pitcher de 19 años, Cararacas-VenezuelaJoven pitcher de 19 años, Cararacas-Venezuela</p>
                 <p className="p-2" style={{ color: "white" }}>Position: Pitcher</p>
