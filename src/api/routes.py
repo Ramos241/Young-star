@@ -145,14 +145,14 @@ def single_user():
 def upload_img():
     if request.method == 'POST':
         image_file = request.files['img']
-        # titulo = request.form.get('titulo')
-        # descripcion = request.form.get('descripcion')
-        # print(image_file, titulo, descripcion)
+
+
 
         if image_file.content_type not in VALID_FORMATS:
             return jsonify({"error": "File must be png, jpg, or jpeg"}), 400
 
-        # if image_file is None or titulo is None or descripcion is None:
+
+
         if image_file is None:
             return jsonify({"error": "All fields are required(Titulo, File, Descripcion)"}), 400
 
@@ -208,6 +208,9 @@ def delete_post(id=None):
         return jsonify({"Msg": "Post deleted successfully"})
 
     except Exception as error:
+
+        return jsonify({"error": error}), 500
+
         return jsonify({"error": error}), 500
 
 # @api.route('/user_img/<int:id>', methods=['PUT'])
