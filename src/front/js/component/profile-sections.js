@@ -21,6 +21,20 @@ export const Navbar_profile = () => {
                 <i class="fas fa-house-user me-1"></i>Home
               </a>
             </li>
+            <li className="nav-item mr-5">
+              <a
+                className="nav-link"
+                id="videos-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#videos"
+                type="button"
+                role="tab"
+                aria-controls="videos"
+                aria-selected="false"
+              >
+                <i class="fas fa-play m-1"></i>Videos
+              </a>
+            </li>
 
             <li className="nav-item mr-5">
               <a
@@ -107,6 +121,88 @@ export const Navbar_profile = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+        </div>
+
+        <div
+          className="tab-pane container-fluid"
+          id="videos"
+          role="tabpanel"
+          aria-labelledby="videos-tab"
+        >
+          <div class="row m-2">
+            <div class="col">
+              <iframe
+                className="video m-2"
+                width="400"
+                height="250"
+                src="https://www.youtube.com/embed/Cugoojjri8U"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className="col">
+              <iframe
+                className="video m-2"
+                width="400"
+                height="250"
+                src="https://www.youtube.com/embed/Cugoojjri8U"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className="col">
+              <iframe
+                className="video m-2"
+                width="400"
+                height="250"
+                src="https://www.youtube.com/embed/Cugoojjri8U"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className="col">
+              <iframe
+                className="video m-2"
+                width="400"
+                height="250"
+                src="https://www.youtube.com/embed/Cugoojjri8U"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className="col">
+              <iframe
+                className="video m-2"
+                width="400"
+                height="250"
+                src="https://www.youtube.com/embed/Cugoojjri8U"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className="col">
+              <iframe
+                className="video m-2"
+                width="400"
+                height="250"
+                src="https://www.youtube.com/embed/Cugoojjri8U"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
 
         <div
