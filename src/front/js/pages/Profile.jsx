@@ -10,7 +10,6 @@ export const Profile = () => {
             <Navbar />
             <Navbar_profile />
             <Profile_card />
-            <p class="fs-3 p-2 followers">30 Followers</p>
         </>
     );
 }

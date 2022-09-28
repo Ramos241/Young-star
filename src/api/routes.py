@@ -57,7 +57,7 @@ def handle_users(user_id=None):
             else:
                 return jsonify(user.serialize()), 200
 
-# Add a new user
+# Add a new users
 
 
 @api.route('/signup', methods=['POST'])
@@ -142,36 +142,38 @@ def single_user():
 
 
 @api.route('/post', methods=['POST'])
-def upload_image():
-    # method_allowed(request, "POST")
+def upload_img():
     if request.method == 'POST':
         image_file = request.files['img']
-        titulo = request.form.get('titulo')
-        descripcion = request.form.get('descripcion')
+        # titulo = request.form.get('titulo')
+        # descripcion = request.form.get('descripcion')
         # print(image_file, titulo, descripcion)
 
-    if image_file.content_type not in VALID_FORMATS:
-        return jsonify({"error": "File must be png, jpg, or jpeg"}), 400
+        if image_file.content_type not in VALID_FORMATS:
+            return jsonify({"error": "File must be png, jpg, or jpeg"}), 400
 
-    if image_file is None or titulo is None or descripcion is None:
-        return jsonify({"error": "All fields are required(Titulo, File, Descripcion)"}), 400
+        # if image_file is None or titulo is None or descripcion is None:
+        if image_file is None:
+            return jsonify({"error": "All fields are required(Titulo, File, Descripcion)"}), 400
 
-    try:
-        cloudinary_upload = uploader.upload(image_file)
-        new_post = Post(
-            titulo=titulo, img_url=cloudinary_upload["url"],  cloudinary_id=cloudinary_upload["public_id"], descripcion=descripcion)
-        db.session.add(new_post)
-        db.session.commit()
-        return jsonify({"msg": "Post uploaded succesfully"})
+        try:
+            cloudinary_upload = uploader.upload(image_file)
+            new_post = Post(
+                img_url=cloudinary_upload["url"],  cloudinary_id=cloudinary_upload["public_id"])
+            # titulo=titulo, img_url=cloudinary_upload["url"],  cloudinary_id=cloudinary_upload["public_id"], descripcion=descripcion)
+            db.session.add(new_post)
+            response = jsonify({"msg": "Post uploaded succesfully"})
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            db.session.commit()
+            return response
 
-    except Exception as error:
-        db.session.rollback()
-        return jsonify({"error": error.args}), 500
+        except Exception as error:
+            db.session.rollback()
+            return jsonify({"error": error.args}), 500
 
 
 @api.route('/post', methods=['GET'])
-def get_all_post():
-    # method_allowed(request, "GET")
+def get_post():
 
     try:
         post = Post.query.all()
@@ -185,8 +187,7 @@ def get_all_post():
 
 
 @api.route('/post/<int:id>', methods=['DELETE'])
-def delete_post_by_id(id=None):
-    # method_allowed(request, "DELETE")
+def delete_post(id=None):
 
     if id is None:
         return jsonify({"error": "the product id is required"}), 400
@@ -208,3 +209,6 @@ def delete_post_by_id(id=None):
 
     except Exception as error:
         return jsonify({"error": error}), 500
+
+# @api.route('/user_img/<int:id>', methods=['PUT'])
+# def actualizar_img

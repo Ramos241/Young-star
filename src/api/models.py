@@ -10,6 +10,8 @@ class User(db.Model):
     password = db.Column(db.String(200), unique=False, nullable=False)
     salt = db.Column(db.String(150), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    img_profile = db.Column(db.String(200), unique=False)
+    cloudinary_id = db.Column(db.String(120), unique=True)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -21,21 +23,22 @@ class User(db.Model):
             "username": self.username,
             "is_active": self.is_active,
             "salt": self.salt,
+            "img_profile": self.img_profile,
         }
 
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    titulo = db.Column(db.String(80), unique=True, nullable=False)
-    descripcion = db.Column(db.String(50), unique=True, nullable=False)
+    # titulo = db.Column(db.String(80), unique=True, nullable=False)
+    # descripcion = db.Column(db.String(50), unique=True, nullable=False)
     img_url = db.Column(db.String(120), unique=True, nullable=False)
     cloudinary_id = db.Column(db.String(120), unique=True, nullable=False)
 
     def serialize(self):
         return {
             "id": self.id,
-            "titulo": self.titulo,
-            "descripcion": self.descripcion,
+            # "titulo": self.titulo,
+            # "descripcion": self.descripcion,
             "img_url": self.img_url,
             "cloudinary_id": self.cloudinary_id
         }

@@ -11,12 +11,6 @@ export const Navbar = () => {
 						to="/"><img className="img-fluid logo" src="https://i.postimg.cc/q77XXd3d/Young-Star-removebg-preview-adobe-express.png" alt="click_logo" />
 					</Link>
 				</div>
-				{/* <div className="d-flex">
-					<input
-						className="buscador form-control" type="search" placeholder=" Buscador" aria-label="Search">
-					</input>
-					<button className="btn btn-primary mx-1"><i className="fas fa-search me-2 pt-2"></i></button>
-				</div> */}
 				<div className="d-flex flex-row-reverse">
 					<Link to="/signup">
 						<button className="btn btn-primary mx-1">Signup</button>

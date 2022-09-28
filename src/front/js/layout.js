@@ -7,7 +7,6 @@ import { Signup } from "./pages/Signup.jsx";
 import { Login } from "./pages/Login.jsx";
 import { Profile } from "./pages/Profile.jsx";
 import injectContext from "./store/appContext";
-import { Products } from "./pages/Products.jsx";
 
 import { Footer } from "./component/footer";
 
@@ -26,7 +25,6 @@ const Layout = () => {
             <Route element={<Signup />} path="/signup" />
             <Route element={<Login />} path="/login" />
             <Route element={<Profile />} path="/Profile" />
-            <Route element={<Products />} path="/products" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />

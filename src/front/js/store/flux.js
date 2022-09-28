@@ -5,8 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			email: "",
 			password: "",
 			user: [],
-			backendUrl: process.env.BACKEND_URL,
-			products: [],
+			// backendUrl: process.env.BACKEND_URL,
+			post: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -17,7 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			userLogout: () => {
 				localStorage.removeItem("token"),
 					setStore({ token: "" })
-				alert("Succesfully logged out")
+				alert("seccios cerrada con exito")
 			},
 
 			loginValidityChecker: (user) => {
@@ -121,9 +121,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			uploadImg: async (post) => {
 				const store = getStore();
 				try {
-					const response = await fetch(`${store.backendUrl}/post`, {
+					const response = await fetch(`http://127.0.0.1:3001/api/post`, {
 						method: "POST",
-						mode: "no-cors",
 						body: post,
 					});
 					getActions().getPost();
@@ -135,10 +134,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getPost: async () => {
 				const store = getStore();
 				try {
-					const response = await fetch(`${store.backendUrl}/post`);
+					const response = await fetch(`http://127.0.0.1:3001/api/post`);
 					const data = await response.json();
 					if (!response.ok) {
-						throw new Error("getPost error");
+						throw new Error("getPost error", error);
 					}
 					setStore({
 						...store,
@@ -149,19 +148,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			deleteProduct: async (product_id) => {
+			deletePost: async (post_id) => {
 				const store = getStore();
 				try {
-					const response = await fetch(
-						`http://127.0.0.1:3001/api/${product_id}`,
+					const response = await fetch(`http://127.0.0.1:3001/api/post/${post_id}`,
 						{
 							method: "DELETE",
 						}
 					);
 					console.log(response);
-					getActions().getProducts();
+					getActions().getPost();
 				} catch (error) {
-					console.log("deleteProduct error", error);
+					console.log("deletePost error", error);
 				}
 			},
 		}
@@ -169,3 +167,4 @@ const getState = ({ getStore, getActions, setStore }) => {
 };
 
 export default getState;
+
