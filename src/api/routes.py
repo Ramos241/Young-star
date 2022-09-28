@@ -21,19 +21,12 @@ api = Blueprint('api', __name__)
 VALID_FORMATS = ["image/png", "image/jpg", "image/jpeg"]
 
 
-# def method_allowed(request, method):
-#     if request.method != method:
-#         return jsonify({"error": "Method not Allowed"}), 405
-
-
 def get_password(password, salt):
     return generate_password_hash(f"{password}{salt}")
 
 
 def check_password(hash_password, password, salt):
     return check_password_hash(hash_password, f"{password}{salt}")
-
-# See all or one user
 
 
 @api.route('/private', methods=['GET'])
@@ -56,8 +49,6 @@ def handle_users(user_id=None):
                 return jsonify({"message": "Error, couldn't find user"}), 404
             else:
                 return jsonify(user.serialize()), 200
-
-# Add a new users
 
 
 @api.route('/signup', methods=['POST'])
@@ -146,12 +137,8 @@ def upload_img():
     if request.method == 'POST':
         image_file = request.files['img']
 
-
-
         if image_file.content_type not in VALID_FORMATS:
             return jsonify({"error": "File must be png, jpg, or jpeg"}), 400
-
-
 
         if image_file is None:
             return jsonify({"error": "All fields are required(Titulo, File, Descripcion)"}), 400
@@ -160,7 +147,6 @@ def upload_img():
             cloudinary_upload = uploader.upload(image_file)
             new_post = Post(
                 img_url=cloudinary_upload["url"],  cloudinary_id=cloudinary_upload["public_id"])
-            # titulo=titulo, img_url=cloudinary_upload["url"],  cloudinary_id=cloudinary_upload["public_id"], descripcion=descripcion)
             db.session.add(new_post)
             response = jsonify({"msg": "Post uploaded succesfully"})
             response.headers.add('Access-Control-Allow-Origin', '*')
@@ -174,7 +160,6 @@ def upload_img():
 
 @api.route('/post', methods=['GET'])
 def get_post():
-
     try:
         post = Post.query.all()
         if post is None:
@@ -201,17 +186,9 @@ def delete_post(id=None):
 
         if cloudinary_delete_response["result"] != "ok":
             return jsonify({"error": "cloudinary deletion error"})
-
         db.session.delete(post)
         db.session.commit()
-
         return jsonify({"Msg": "Post deleted successfully"})
 
     except Exception as error:
-
         return jsonify({"error": error}), 500
-
-        return jsonify({"error": error}), 500
-
-# @api.route('/user_img/<int:id>', methods=['PUT'])
-# def actualizar_img

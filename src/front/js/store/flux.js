@@ -6,7 +6,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             email: "",
             password: "",
             user: [],
-            // backendUrl: process.env.BACKEND_URL,
             post: [],
         },
         actions: {

@@ -21,17 +21,6 @@ export const Navbar = () => {
             />
           </Link>
         </div>
-        {/* <div className="d-flex">
-          <input
-            className="buscador form-control me-2"
-            type="search"
-            placeholder=" Search"
-            aria-label="Search"
-          ></input>
-          <button className="btn btn-primary mx-1">
-            <i className="fas fa-search me-2 pt-2"></i>
-          </button>
-        </div> */}
         <div className="d-flex flex-row-reverse">
           <Link to="/">
             <button type="button" onClick={() => actions.userLogout()} className="btn btn-primary mx-1">Logout</button>

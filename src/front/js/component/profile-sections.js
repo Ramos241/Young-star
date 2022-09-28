@@ -81,12 +81,13 @@ export const Navbar_profile = () => {
           </ul>
         </div>
       </nav>{" "}
-      */
+
       {/* <!-- Tab panes --> */}
+
       <div className="tab-content d-flex">
         <Profile_card />
         <div
-          className="tab-pane active"
+          className="tab-pane active my-5"
           id="home"
           role="tabpanel"
           aria-labelledby="home-tab"
