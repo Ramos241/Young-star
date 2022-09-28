@@ -35,7 +35,6 @@ export const Navbar = () => {
           <Link to="/Profile">
             <button className="btn btn-primary mx-1">Perfil</button>
           </Link>
-          {/* <button className="btn btn-secondary mx-1">Logout</button> */}
         </div>
       </div>
     </nav>

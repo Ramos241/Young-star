@@ -3,6 +3,57 @@
   padding-left: 35%;
 }
 
+.contenedor-img-perfil {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(176, 172, 172);
+  border-radius: 100%;
+}
+
+.contenedor-img-perfil>.img-perfil {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.container-upload {
+  margin: 0%;
+  padding: 0%;
+}
+
+.boton-eliminar {
+  margin-top: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(245, 9, 9);
+  border: none;
+  transition: .3s ease all;
+  border-radius: 5px;
+}
+
+.boton-eliminar:hover {
+  background-color: darkred;
+}
+
+.boton-subir,
+.input-browser {
+  margin-top: 5px;
+  width: 70px;
+  height: 30px;
+  background-color: rgb(0, 21, 251);
+  border: none;
+  border-radius: 5px;
+}
+
+.boton-subir:hover {
+  background-color: rgb(10, 10, 171);
+}
+
+.input-descripcion {
+  border: none;
+  border-radius: 5px;
+}
+
 .photo-profile {
   width: 25rem;
   height: 25rem;

@@ -15,7 +15,7 @@ export const Navbar = () => {
 				<div className="d-flex">
 
 					<input
-						className="buscador form-control" type="search" placeholder=" Buscador" aria-label="Search">
+						className="buscador form-control" type="search" placeholder=" Search" aria-label="Search">
 					</input>
 					<button className="btn btn-primary mx-1"><i className="fas fa-search me-2 pt-2"></i></button>
 				</div>
@@ -27,10 +27,6 @@ export const Navbar = () => {
 					<Link to="/login">
 						<button className="btn btn-primary mx-1">Login</button>
 					</Link>
-					{/* <Link to="/Profile">
-						<button className="btn btn-primary mx-1">Perfil</button>
-					</Link> */}
-					{/* <button className="btn btn-secondary mx-1">Logout</button> */}
 				</div>
 			</div>
 		</nav>
