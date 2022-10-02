@@ -1,9 +1,10 @@
 """This module takes care of starting the API Server, Loading the DB and Adding the endpoints"""
 from ast import Or
 import os
+from turtle import title
 from unicodedata import name
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import Post, User, db, Post
+from api.models import Post, User, db, Post_galery
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
 from base64 import b64encode

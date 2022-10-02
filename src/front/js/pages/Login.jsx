@@ -37,7 +37,7 @@ export const Login = () => {
 			<Navbar />
 			<form className="formulario" onSubmit={handleSubmit}>
 				<h1>Iniciar Seccion</h1>
-				<div className="container">
+				<div className="container-login">
 					<div className="imput-contenedor mb-3 d-flex">
 						<i className="fa-solid fa-envelope icon"></i>
 						<input
