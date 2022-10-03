@@ -3,16 +3,12 @@ import { Context } from "../store/appContext";
 import "../../styles/signup.css";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../component/navbar";
-import Swal from "sweetalert2";
+
 
 
 export const Signup = () => {
 	const { actions } = useContext(Context);
 	const navigate = useNavigate()
-
-	// const alerta = () => {
-	// 	Swal.fire('The Internet?', 'That thing is still around?', 'question')
-	// }
 
 	const [userData, setUserData] = useState(initialState)
 	let initialState = {
