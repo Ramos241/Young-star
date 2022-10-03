@@ -8,7 +8,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url("https://img.mlbstatic.com/mlb-images/image/private/t_2x1/t_w1536/mlb/lwqr647koajnx3ruvrqv.jpg");
 }
 
 footer {
@@ -65,3 +67,4 @@ footer {
 .img_logo {
   filter: drop-shadow(8px 8px 4px #0f3fbb);
 }
+
