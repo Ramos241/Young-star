@@ -1,16 +1,18 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
-
 import { useNavigate } from "react-router-dom";
-
 import { Navbar } from "../component/navbar";
-
+import Swal from "sweetalert2";
 
 
 export const Signup = () => {
 	const { actions } = useContext(Context);
 	const navigate = useNavigate()
+
+	// const alerta = () => {
+	// 	Swal.fire('The Internet?', 'That thing is still around?', 'question')
+	// }
 
 	const [userData, setUserData] = useState(initialState)
 	let initialState = {
@@ -26,7 +28,7 @@ export const Signup = () => {
 			navigate("/login")
 
 		} else {
-			alert("CAMPOS INVALIDOS")
+			return false
 		}
 	}
 
@@ -43,7 +45,7 @@ export const Signup = () => {
 			<div className="img-fondo">
 				<form className="formulario" onSubmit={handleSubmit}>
 					<h1>Registrate</h1>
-					<div className="container">
+					<div className="container-signup">
 						<div className="imput-contenedor mb-3 d-flex">
 							<i className="fa-solid fa-envelope icon"></i>
 							<input

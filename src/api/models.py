@@ -1,3 +1,4 @@
+from enum import unique
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -39,3 +40,17 @@ class Post(db.Model):
             "cloudinary_id": self.cloudinary_id
         }
 
+
+class Post_galery(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    img_url = db.Column(db.String(120), unique=True, nullable=False)
+    title = db.Column(db.String(100), unique=True, nullable=False)
+    cloudinary_id = db.Column(db.String(120), unique=True, nullable=False)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "img_url": self.img_url,
+            "title": self.title,
+            "cloudinary_id": self.cloudinary_id
+        }

@@ -17,7 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             userLogout: () => {
                 localStorage.removeItem("token"),
                     setStore({ token: "" })
-                alert("seccios cerrada con exito")
+                alert("seccion cerrada con exito")
             },
 
             loginValidityChecker: (user) => {
@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         actions.getUserInfo()
                         return true
                     } else {
-                        return false
+                        alert("usted no esta registrado")
                     }
                 } catch (error) {
                     console.log(`Error: ${error}`)
@@ -67,8 +67,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         return true
                     }
                     else {
-                        alert("Error:Hay campos no validos")
-                        return false
+                        alert("Hay campos no validos")
                     }
                 }
             },
