@@ -31,7 +31,7 @@ footer {
 }
 
 .card {
-  margin: 40px auto;
+  margin: 3rem auto;
   width: 600px;
 }
 
@@ -54,7 +54,7 @@ footer {
 }
 
 .container {
-  display: flex;
+  display:inline-block;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;

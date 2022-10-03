@@ -9,34 +9,6 @@ export const Home = () => {
         <>
             <Navbar />
             <div className="container pt-lg-5" >
-                {/* Video 1 */}
-                <div className="card mx-3">
-                    <div className="card-header w-100">
-                        <img
-                            src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/02/23/15193541612182.jpg"
-                            className="profile-photo border border border-dark rounded-circle float-start"
-                            alt="..."
-                        ></img>
-                        <h4 className="titulo float-start p-2">Jose Perez (2025)</h4>
-                        <p className="float-end">15/09</p>
-                    </div>
-                    <iframe
-                        width="598"
-                        height="400"
-                        src="https://www.youtube.com/embed/k55JCIS1UOM"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; 1; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    ></iframe>
-                    <div className="card-body">
-                        <h5 className="card-title">23 Likes</h5>
-                        <p className="card-text">Descripcion*</p>
-                        <button type="button" className="btn btn-light btn-sm">
-                            <i className="far fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
                 {/* Video 2 */}
                 <div className="card">
                     <div className="card-header">
@@ -143,34 +115,6 @@ export const Home = () => {
                     ></iframe>
                     <div className="card-body">
                         <h5 className="card-title">50 Likes</h5>
-                        <p className="card-text">Descripcion*</p>
-                        <button type="button" className="btn btn-light btn-sm">
-                            <i className="far fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
-                {/* vide 6 */}
-                <div className="card mx-3">
-                    <div className="card-header w-100">
-                        <img
-                            src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/02/23/15193541612182.jpg"
-                            className="profile-photo border border border-dark rounded-circle float-start"
-                            alt="..."
-                        ></img>
-                        <h4 className="titulo float-start p-2">Jose Perez (2025)</h4>
-                        <p className="float-end">15/09</p>
-                    </div>
-                    <iframe
-                        width="598"
-                        height="400"
-                        src="https://www.youtube.com/embed/k55JCIS1UOM"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; 1; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    ></iframe>
-                    <div className="card-body">
-                        <h5 className="card-title">23 Likes</h5>
                         <p className="card-text">Descripcion*</p>
                         <button type="button" className="btn btn-light btn-sm">
                             <i className="far fa-heart"></i>
