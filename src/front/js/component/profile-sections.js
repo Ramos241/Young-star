@@ -6,7 +6,7 @@ export const Navbar_profile = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark navbar-sections">
         <div className="container container-fluid">
-          <ul className=" nav nav-tabs mb-2 mb-lg-0">
+          <ul className=" nav nav-tabs nav-buttons mb-2 mb-lg-0">
             <li className="nav-item mr-5">
               <a
                 className="nav-link active"
@@ -18,7 +18,7 @@ export const Navbar_profile = () => {
                 aria-controls="home"
                 aria-selected="true"
               >
-                <i class="fas fa-house-user me-1"></i>Home
+                <i className="fas fa-house-user me-1"></i>Home
               </a>
             </li>
         
@@ -34,7 +34,7 @@ export const Navbar_profile = () => {
                 aria-controls="stats"
                 aria-selected="false"
               >
-                <i class="fas fa-chart-bar m-1"></i>Stats
+                <i className="fas fa-chart-bar m-1"></i>Stats
               </a>
             </li>
             <li className="nav-item mr-5">
@@ -48,7 +48,7 @@ export const Navbar_profile = () => {
                 aria-controls="info"
                 aria-selected="false"
               >
-                <i class="fas fa-book m-1"></i>Info
+                <i className="fas fa-book m-1"></i>Info
               </a>
             </li>
             <li className="nav-item mr-5">
@@ -62,7 +62,7 @@ export const Navbar_profile = () => {
                 aria-controls="contact"
                 aria-selected="false"
               >
-                <i class="far fa-id-card m-1"></i>Contact
+                <i className="far fa-id-card m-1"></i>Contact
               </a>
             </li>
           </ul>
