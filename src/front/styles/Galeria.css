@@ -1,0 +1,20 @@
+.card-image:hover {
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.title-galeria {
+    text-align: center;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073,
+        0 0 60px #e60073, 0 0 70px #e60073;
+    color: aliceblue;
+}
+
+.subir_imagen {
+    text-decoration: underline;
+    text-shadow: 0 0 10px #fff;
+}
+
+.icono_profile {
+    text-shadow: 0 0 10px #fff;
+}
