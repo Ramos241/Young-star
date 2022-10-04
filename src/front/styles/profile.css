@@ -1,5 +1,5 @@
 .navbar-sections {
-  border-bottom: 1px solid rgb(79, 161, 255);
+  border-bottom: 2px solid rgb(7, 118, 245);
   padding-left: 35%;
 }
 
@@ -19,6 +19,9 @@
 .boton-subir:hover {
   background-color: rgba(50, 161, 52, 0.766);
 }
+
+.nav-buttons{background-color: rgb(71, 71, 71);
+border-radius: 20%;}
 
 .photo-profile {
   width: 25rem;
@@ -53,11 +56,12 @@
 .ficha-perfil {
   width: 400px;
   height: 600px;
-  border: 2px solid rgb(79, 161, 255);
+  border: 2px solid rgb(28, 131, 250);
   position: relative;
   bottom: 1rem;
   margin-left: 1rem;
   border-radius: 20%;
+  background-color: rgb(138, 189, 247);
 }
 
 .card-profile {
