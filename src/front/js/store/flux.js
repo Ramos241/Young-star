@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       password: "",
       user: [],
       post: [],
-      urlBase: process.env.BACKEND_URL,
+      urlBase: "http://127.0.0.1:3001",
     },
     actions: {
       // Use getActions to call a function within a fuction

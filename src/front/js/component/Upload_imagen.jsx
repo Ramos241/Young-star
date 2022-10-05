@@ -1,12 +1,13 @@
 import { Navbar_galeria } from "../component/Navbar_galeria.jsx"
 import React, { useState, useEffect, useContext, Component } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export const Upload_imagen = () => {
 
     const { store, actions } = useContext(Context);
     const [imageFile, setImageFile] = useState();
+    let navigate = useNavigate();
 
     const handleSubmit = () => {
         const formData = new FormData();
@@ -40,7 +41,7 @@ export const Upload_imagen = () => {
                         </div>
                     </div>
                     <div className="navbar-nav ms-auto">
-                        <Link className="nav-link" to="/Galeria"><i className="fa-solid fa-left-long"></i></Link>
+                        <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}><i className="fa-solid fa-left-long"></i></button>
                     </div>
                 </div>
             </div>
