@@ -1,24 +1,45 @@
 import React, { useState, useEffect, useContext } from "react";
 
-
 export const Profile_card = () => {
-    return (
-        <>
-            <div className="card-profile">
-            <div><img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/02/23/15193541612182.jpg" className="photo-profile rounded-circle" alt="..."></img></div>
-        <div className="ficha-perfil">
-                <h1><strong style={{ color: "white" }}>Jose Perez</strong></h1>
-                <p className="p-2" style={{ color: "white" }}>Joven pitcher de 19 años, Cararacas-Venezuela, Joven pitcher de 19 años, Cararacas-VenezuelaJoven pitcher de 19 años, Cararacas-VenezuelaJoven pitcher de 19 años, Cararacas-Venezuela</p>
-                <p className="p-2" style={{ color: "white" }}>Position: Pitcher</p>
-                <p className="p-2" style={{ color: "white" }}>Height: 6,23ft</p>
-                <p className="p-2" style={{ color: "white" }}>Weight: 240.3lb</p>
-                <p className="p-2" style={{ color: "white" }}>Throwing arm: Left</p>
-                <p className="p-2" style={{ color: "white" }}>batting side: Left</p>
-                <p className="p-2" style={{ color: "white" }}>Nationality: Ccs-Venezuela</p>
-                <p className="p-2" style={{ color: "white" }}>Club: San Diego Padres Academy</p>
-            </div>
+  return (
+    <>
+      <div className="card-profile">
+        <div>
+          <img
+            src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/02/23/15193541612182.jpg"
+            className="photo-profile rounded-circle"
+            alt="..."
+          ></img>
         </div>
+        <div className="small-profile">
+        <div className="d-flex justify-content-center pt-1">
+            <p className="fs-2 fw-bold">Jose Perez</p>
+          </div>
+          <div>
+            <p>Tercera base #32</p>
+          </div>
+          <table className="table">
+            <tbody>
+              <tr>
+                <td>EST/PES</td>
+                <th className="fs-6">2.01 m, 127 kg</th>
+              </tr>
+              <tr>
+                <td>FDN</td>
+                <th className="fs-6">17/1/2001 (21)</th>
+              </tr>
+              <tr>
+                <td>BAT/THR</td>
+                <th className="fs-6">Derecha/Derecha</th>
+              </tr>
+              <tr>
+                <td>NACIDO EN</td>
+                <th className="fs-6">Ccs-Venezuela</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </>
-    )
-}
-
+  );
+};
