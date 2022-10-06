@@ -93,3 +93,14 @@ border-radius: 10%;}
   border-radius: 2%;
 }
 
+.info-container{
+  width: 60rem;
+  height: 40rem;
+  background-color: #ffffff;
+  border-radius: 2%;
+}
+
+.imagen-info {
+  width: 200px;
+  height: 200px;
+}
