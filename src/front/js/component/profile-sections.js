@@ -80,7 +80,10 @@ export const Navbar_profile = () => {
             <div>
               <h2 className="badge bg-dark text-wrap ms-2">Descripción</h2>
               <p className="m-3 lead">
-                Joven venezolano, activo, jugador agresivo y con mucho amor al deporte y la competencia, en busca de la superación y deseo de llegar a las ligas mayores, buena mecanica de bateo, listo para recibir ofertas. 
+                Joven venezolano, activo, jugador agresivo y con mucho amor al
+                deporte y la competencia, en busca de la superación y deseo de
+                llegar a las ligas mayores, buena mecanica de bateo, listo para
+                recibir ofertas.
               </p>
             </div>
             <div className="small-stats">
@@ -257,10 +260,14 @@ export const Navbar_profile = () => {
                     <td>NYY</td>
                   </tr>
                   <tr>
-                    <th className="letras" scope="col">Carrera</th>
+                    <th className="letras" scope="col">
+                      Carrera
+                    </th>
                   </tr>
                   <tr>
-                    <th className="letras" scope="col">Promedios de Temporada</th>
+                    <th className="letras" scope="col">
+                      Promedios de Temporada
+                    </th>
                   </tr>
                 </tbody>
               </table>
@@ -288,7 +295,6 @@ export const Navbar_profile = () => {
                 </thead>
                 <tbody>
                   <tr>
-            
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -308,7 +314,6 @@ export const Navbar_profile = () => {
                     <td>0</td>
                   </tr>
                   <tr>
-                    
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -328,7 +333,6 @@ export const Navbar_profile = () => {
                     <td>0</td>
                   </tr>
                   <tr>
-                    
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -348,7 +352,6 @@ export const Navbar_profile = () => {
                     <td>0</td>
                   </tr>
                   <tr>
-                    
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -368,7 +371,6 @@ export const Navbar_profile = () => {
                     <td>0</td>
                   </tr>
                   <tr>
-                    
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -388,7 +390,6 @@ export const Navbar_profile = () => {
                     <td>0</td>
                   </tr>
                   <tr>
-                    
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -408,7 +409,6 @@ export const Navbar_profile = () => {
                     <td>0</td>
                   </tr>
                   <tr>
-                    
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -428,7 +428,6 @@ export const Navbar_profile = () => {
                     <td>0</td>
                   </tr>
                   <tr>
-                    
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -462,25 +461,31 @@ export const Navbar_profile = () => {
                     <th>R:Carreras</th>
                   </tr>
                 </thead>
-                <tbody><tr>
+                <tbody>
+                  <tr>
                     <th>H:Aciertos</th>
                     <th>2B:Dobles</th>
                     <th>3B:Triples</th>
-                  </tr><tr>
+                  </tr>
+                  <tr>
                     <th>BB:Bases por bolas</th>
                     <th>HR:Cuadrangulares</th>
                     <th>RBI:Empujadas</th>
-                  </tr><tr>
+                  </tr>
+                  <tr>
                     <th>HBP:Golpeado por Lanzamiento</th>
                     <th>K:Ponches</th>
                     <th>SB:Bases robadas</th>
-                  </tr><tr>
+                  </tr>
+                  <tr>
                     <th>CS:Atrapado en intento de robo</th>
                     <th>AVG:Promedio de Bateo</th>
                     <th>SLG:Porcentaje de slugging</th>
-                  </tr><tr>
+                  </tr>
+                  <tr>
                     <th>OPS:OPS = OBP + SLG</th>
-                  </tr></tbody>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
@@ -491,7 +496,40 @@ export const Navbar_profile = () => {
           role="tabpanel"
           aria-labelledby="info-tab"
         >
-          <h2 style={{ color: "white" }}>AQUI VA LA INFO</h2>
+          <div className="info-container m-2">
+            <div>
+              <p className="badge bg-dark text-wrap ms-2">Info</p>
+            </div>
+            <div className="d-flex">
+              <p className="text-left ms-2 w-70">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing
+                and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy <br></br>
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+              <img
+                className="imagen-info m-4"
+                src="https://reglamentos-deportes.com/wp-content/uploads/2010/01/512px-Baseball_swing.jpg"
+                alt="..."
+              ></img>
+            </div>
+          </div>
         </div>
         <div
           className="tab-pane ms-4"
@@ -499,7 +537,23 @@ export const Navbar_profile = () => {
           role="tabpanel"
           aria-labelledby="contact-tab"
         >
-          <h2 style={{ color: "white" }}>AQUI VA EL CONTACTO</h2>
+          <div className="info-container m-2">
+            <div>
+              <p className="badge bg-dark text-wrap ms-2">Contacto</p>
+            </div>
+            <p>
+              <i class="fas fa-envelope m-1"></i>carlosgomz1331@gmail.com
+            </p>
+            <p>
+              <i class="fab fa-whatsapp m-1"></i>+58 4263022014
+            </p>
+            <p>
+              <i class="fab fa-telegram-plane m-1"></i>+58 4263022014
+            </p>
+            <p>
+              <i class="fab fa-instagram m-1"></i>@carlossgomz
+            </p>
+          </div>
         </div>
       </div>
     </>
