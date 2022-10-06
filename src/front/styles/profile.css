@@ -21,7 +21,7 @@
 }
 
 .nav-buttons{background-color: rgb(71, 71, 71);
-border-radius: 20%;}
+border-radius: 10%;}
 
 .photo-profile {
   width: 25rem;
@@ -34,41 +34,62 @@ border-radius: 20%;}
 }
 
 .principal-video {
-  position: relative;
-  left: 2rem;
   border: 3px solid rgb(79, 161, 255);
 }
 
 .second-video {
   position: relative;
-  left: 4rem;
-  bottom: 15rem;
+  left:1rem;
+  bottom: 11rem;
   border: 3px solid rgb(79, 161, 255);
 }
 
 .third-video {
   position: relative;
-  left: 41.5rem;
-  bottom: 13rem;
+  left: 38.75rem;
+  bottom: 10rem;
   border: 3px solid rgb(79, 161, 255);
 }
 
 .ficha-perfil {
-  width: 400px;
-  height: 600px;
-  border: 2px solid rgb(28, 131, 250);
-  position: relative;
-  bottom: 1rem;
-  margin-left: 1rem;
-  border-radius: 20%;
-  background-color: rgb(138, 189, 247);
-}
-
-.card-profile {
-  position: relative;
-  bottom: 1rem;
+  width: 900px;
+  height: 200px;
+  border-radius: 2%;
+  background-color: #ffffff;
 }
 
 .video {
   border: 3px solid rgb(79, 161, 255);
 }
+
+.stats-table {
+  background-color: #ffffff;
+  width: 800px;
+  height: 210px;
+  border-radius: 2%;
+
+}
+
+.small-profile {
+  margin-left: 5rem;
+  width: 270px;
+  height: 270px;
+  background-color: #ffffff;
+  border-radius: 2%;
+  margin-bottom: 1rem;
+}
+
+.container-videos {
+  width: 900px;
+  height: 400px;
+  background-color: #ffffff;
+  border-radius: 2%;
+}
+
+.cuadro-estadisticas{
+  background-color: #ffffff;
+  width: 980px;
+  height: 800px;
+  border-radius: 2%;
+}
+
