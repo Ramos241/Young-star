@@ -81,7 +81,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       userSignup: async (user) => {
         try {
           let store = getStore();
-          let response = await fetch(`${store.urlBase}/signup`, {
+          let response = await fetch(`${store.urlBase}/api/signup`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
